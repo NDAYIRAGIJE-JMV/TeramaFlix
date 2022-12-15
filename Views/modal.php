@@ -461,6 +461,7 @@
         });
     })
     
+    //user login handle request
     
     $(function(){
         $('#login_form').submit(function (e) { 
@@ -527,7 +528,7 @@ $('#spn1').css('color','red');
                                     response.message,
                                     'success'
                             )
-                            $(location).prop("href", "http://localhost/TeramaFlix/");
+                            $(location).prop("href", "http://localhost/TeramaFlix");
                             $('#session').val(response.sms.ID);
                             $('.buttons').hide();
                             $("#login_btn").text('Login')
