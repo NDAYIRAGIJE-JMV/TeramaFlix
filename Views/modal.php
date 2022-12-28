@@ -460,9 +460,7 @@
             }
         });
     })
-    
     //user login handle request
-    
     $(function(){
         $('#login_form').submit(function (e) { 
             e.preventDefault();
@@ -471,7 +469,6 @@
                 e.preventDefault()
                 $(this).addClass('was-validated');
             }else{
- 
   var valid= true;
   $('#Email').css("border","1px solid black");
 
@@ -528,7 +525,7 @@ $('#spn1').css('color','red');
                                     response.message,
                                     'success'
                             )
-                            $(location).prop("href", "http://localhost/TeramaFlix");
+                            $(location).prop("href", "http://localhost/TeramaFlix/");
                             $('#session').val(response.sms.ID);
                             $('.buttons').hide();
                             $("#login_btn").text('Login')

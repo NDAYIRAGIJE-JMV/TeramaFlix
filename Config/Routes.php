@@ -56,6 +56,7 @@ $routes->post('post/search', 'PostController::search');
 $routes->post('post/searched', 'PostController::searched');
 $routes->post('login', 'Home::Login');
 $routes->post('SignUp', 'Home::Register');
+$routes->get('/dashboard', 'AdminController::dashboard');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -9,12 +9,12 @@ class CommentsModel extends Model
     protected $DBGroup          = 'default';
     protected $table            = 'comments';
     protected $primaryKey       = 'ID';
-    protected $useAutoIncrement = false;
+    protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['ID','Post','User','Body'];
+    protected $allowedFields    = ['Post','User','Body'];
     
     // Dates
     protected $useTimestamps = false;

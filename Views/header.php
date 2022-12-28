@@ -1,4 +1,4 @@
-<header>
+<header class="relative bottom-0">
             <div class="headercontainer fixed hidden  lg:block shadow-lg  pl-6 min-h-min w-[100%] bg-white overflow-hidden right-0 lef-0 top-0 z-20">
             
             <nav class="flex sm:flex-row sm:sticky sm:top-0 flex-col sm:items-center sm:justify-center items-center justify-center space-y-2 pb-2 relative  ">
@@ -35,5 +35,6 @@
                     </button> 
                 </nav>
             </div>
+            <div id="searchedprop" class="absolute z-20 left-[40%]  w-[20%] sm:top-0   h-auto  overflow-hide bg-blue-100 rounded-md"></div>
         </header>
-         <div id="searchedprop" class="absolute z-20 left-[40%] mt-14 w-[20%] sm:top-0 fixed  h-auto  overflow-hide bg-blue-100 rounded-md"></div>
+         

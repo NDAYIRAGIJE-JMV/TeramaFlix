@@ -9,12 +9,12 @@ class PostModel extends Model
     protected $DBGroup          = 'default';
     protected $table            = 'posts';
     protected $primaryKey       = 'ID';
-    protected $useAutoIncrement = false;
+    protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['ID','Title','Image','Video','Categorie','Body','User','Genre','Visible'];
+    protected $allowedFields    = ['Title','Image','Video','Categorie','Body','User','Genre','Visible'];
     
     
     // Dates

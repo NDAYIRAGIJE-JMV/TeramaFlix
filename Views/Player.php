@@ -96,7 +96,8 @@
                     </div>
                   </div>
                   <div id="play">
-                    <video  class="rounded" src="<?= base_url() ?>/Videos/<?= $myVideo->Video ?>" autoplay></video> 
+                    <video id="<?= $myVideo->ID ?>" class="playing rounded" src="<?= base_url() ?>/Videos/<?= $myVideo->Video ?>" autoplay></video> 
+                    <input type="hidden" name="session_id">
                   </div>
                 </div>
                 <div id="description">
@@ -117,13 +118,13 @@
                         </div>
                        </div>
                        <div class="reaction flex flex-row justify-between">
-                        <div class="jaime bg-gray-200 p-2 rounded-3xl h-[45px] text-black flex lg:flex-row flex-col justify-center items-center lg:space-x-2 lg:text-[18px] font-semibold lg:text-base text-[13px]">
+                        <div class="jaime cursor-pointer  bg-gray-200 p-2 rounded-3xl h-[45px] text-black flex lg:flex-row flex-col justify-center items-center lg:space-x-2 lg:text-[18px] font-semibold lg:text-base text-[13px]">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="lg:w-6 lg:h-6 w-4 h-4 cursor-pointer">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6.633 10.5c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 012.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 00.322-1.672V3a.75.75 0 01.75-.75A2.25 2.25 0 0116.5 4.5c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 01-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 00-1.423-.23H5.904M14.25 9h2.25M5.904 18.75c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 01-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 10.203 4.167 9.75 5 9.75h1.053c.472 0 .745.556.5.96a8.958 8.958 0 00-1.302 4.665c0 1.194.232 2.333.654 3.375z" />
                               </svg>
                               <span id="<?= $myVideo->ID ?>" class="liked">j'aime</span>
                             </div>
-                           <div class="jaimepas bg-gray-200 p-2 rounded-3xl h-[45px] text-black flex lg:flex-row justify-center items-center  lg:space-x-2 lg:text-[18px] lg:text-base text-[13px] font-semibold flex-col">
+                           <div class="jaimepas cursor-pointer bg-gray-200 p-2 rounded-3xl h-[45px] text-black flex lg:flex-row justify-center items-center  lg:space-x-2 lg:text-[18px] lg:text-base text-[13px] font-semibold flex-col">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="lg:w-6 lg:h-6 w-4 h-4 cursor-pointer">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 15h2.25m8.024-9.75c.011.05.028.1.052.148.591 1.2.924 2.55.924 3.977a8.96 8.96 0 01-.999 4.125m.023-8.25c-.076-.365.183-.75.575-.75h.908c.889 0 1.713.518 1.972 1.368.339 1.11.521 2.287.521 3.507 0 1.553-.295 3.036-.831 4.398C20.613 14.547 19.833 15 19 15h-1.053c-.472 0-.745-.556-.5-.96a8.95 8.95 0 00.303-.54m.023-8.25H16.48a4.5 4.5 0 01-1.423-.23l-3.114-1.04a4.5 4.5 0 00-1.423-.23H6.504c-.618 0-1.217.247-1.605.729A11.95 11.95 0 002.25 12c0 .434.023.863.068 1.285C2.427 14.306 3.346 15 4.372 15h3.126c.618 0 .991.724.725 1.282A7.471 7.471 0 007.5 19.5a2.25 2.25 0 002.25 2.25.75.75 0 00.75-.75v-.633c0-.573.11-1.14.322-1.672.304-.76.93-1.33 1.653-1.715a9.04 9.04 0 002.86-2.4c.498-.634 1.226-1.08 2.032-1.08h.384" />
                               </svg>
@@ -147,7 +148,12 @@
                 </div>
                 <div class="profil  flex flex-row justify-between lg:px-0 px-[3%] items-center ">
                     <div class="profilChannel  flex justify-start items-center space-x-2  cursor-pointer ">
-                        <img src="<?= base_url() ?>/img/logo.png" class="w-13 h-12 my-1  rounded-full " alt="logo">
+                      <?php  if ($myVideo->Photo) {
+                        echo '<img src="'.base_url().'/Thumbnails/'.$myVideo->Photo.'" class="w-13 h-12 my-1  rounded-full " alt="logo">';
+                      } else {
+                        echo '<img src="'.base_url().'/img/logo.png" class="w-13 h-12 my-1  rounded-full " alt="logo">';
+                      }
+                       ?>
                         <h1 class= "font-bold text-[20px] cursor-pointer"><?= $myVideo->Nom ?> <?= $myVideo->Prenom ?></h1>
                     </div>
                     <div class="sabonner bg-blue-500 h-[45px] px-[10px] flex justify-center items-center rounded cursor-pointer text-white">
@@ -166,7 +172,14 @@
                             ?>
                         <div class="userComment flex flex-row space-x-1  mb-5">
                             <div class="userProfil  cursor-pointer w-[10%] ">
-                                <img src="<?= base_url() ?>/img/logo.png" class="w-10 h-9  rounded-full " alt="logo">
+                              <?php if ($comments->Photo) {
+                                echo '<img src="'.base_url().'/Thumbnails/'.$comments->Photo.'" class="w-10 h-9  rounded-full " alt="logo">';
+                              } else {
+                                echo '<img src="'.base_url().'/img/logo.png" class="w-10 h-9  rounded-full " alt="logo">';
+                              }
+                              
+                              ?>
+                                
                             </div>
                             <div class="userTextComment bg-blue-500 max-w-[90%] rounded-lg px-[20px] py-[6px]">
                                 <h5 class="userName font-semibold"><?= $comments->Nom ?></h5>
@@ -228,7 +241,11 @@
                       </div>
                   </div> 
                   </a>
-                  <?php }} ?>
+                  <?php }} 
+                  if($like){
+                   echo '<input id="etat" type="hidden" value="'.$like->Etat.'">';
+                  }
+                  ?>
           </div>
             </aside>
         </div>
@@ -236,23 +253,57 @@
       <script id="script" src="<?= base_url() ?>/player.js"></script>
       <script type="text/javascript">
         $(document).ready(function(){
+          //handle get user's comment on video 
+          $(document).on('click','.sendButton',(e)=>{
+            e.preventDefault();
+            var cmnt = $(document).find('#comment').val();
+            var video = $(document).find('.playing').attr('id')
+            $.ajax({
+              method: "post",
+              url: '<?= base_url('post/comment') ?>',
+              data: {user:'4', video: video,comment: cmnt},
+              success: function (response) {
+                $(document).find('.allUserComment').html(response.message)
+                $(document).find('#comment').val('');
+              }
+            });
+          })
+          //envoyer les like d'un clent sur un video
           $('.jaime').click(function (e) { 
             e.preventDefault();
-            var video = $('.liked').attr('id');
+            handleLike(1)
+          });
+          //envoyer les dislike d'un clent sur un video
+          $('.jaimepas').click(function (e) { 
+            e.preventDefault();
+            handleLike(0)
+          });
+          //handle recuperer valeur necessaire d'une session
+          function handleLike(status){
+            var video = $(document).find('.playing').attr('id')
             $.ajax({
               method: "post",
               url: '<?= base_url('post/liked') ?>',
-              data: {user:'us1', video: video},
+              data: {user:'1', video: video, status: status},
               success: function (response) {
-                $('.jaime').attr('id', 'aime');
+                console.log(response);
+                if (response.message == 1) {
+                  $(document).find('.jaime').attr('id','aime')
+                  $(document).find('.jaimepas').removeAttr('id')
+                }else if (response.message == 0) {
+                  $(document).find('.jaimepas').attr('id','aime')
+                  $(document).find('.jaime').removeAttr('id')
+                }
+                if(!response){
+                  $(document).find('.jaimepas').removeAttr('id')
+                }
               }
             });
-          });
-          $(document).on('click','.sendButton',(e)=>{
-            e.preventDefault();
-            var cmnt = $('#comment').val();
-            alert(cmnt);
-          })
+          }
+          valideViews()
+          function valideViews(){
+           var etat = $(document).find('#etat').val()
+          }
           });
     </script>
    </body>

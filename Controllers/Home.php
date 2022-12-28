@@ -52,7 +52,6 @@ class Home extends BaseController
           return $this->response->setJSON([
             'error'=>true,
             'message'=>"invalid password"
-           
           ]);
          }
           

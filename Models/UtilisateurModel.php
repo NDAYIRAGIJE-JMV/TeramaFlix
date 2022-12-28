@@ -14,7 +14,7 @@ class UtilisateurModel extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['ID','Nom','Prenom','Photo','Cover','Naissance','Genre','Mail','Phone','Pays','Password'];
+    protected $allowedFields = ['Nom','Prenom','Photo','Cover','Naissance','Genre','Mail','Phone','Pays','Password'];
 
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';
