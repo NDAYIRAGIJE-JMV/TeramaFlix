@@ -9,13 +9,12 @@ class ViewsModel extends Model
     protected $DBGroup          = 'default';
     protected $table            = 'views';
     protected $primaryKey       = 'ID';
-    protected $useAutoIncrement = false;
+    protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['ID','Post','User','type'];
-    
+    protected $allowedFields    = ['Post','User','type'];
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';

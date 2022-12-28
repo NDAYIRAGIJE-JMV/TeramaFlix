@@ -27,13 +27,12 @@ class PostController extends BaseController
         $filename = $file->getRandomName();
         $imagename = $imge->getRandomName();
          $data = [
-            'ID'=>'vd21',
             'Title' => $this->request->getPost('title'),
             'Image' => $imagename,
             'Video' => $filename,
             'Categorie' => 'ct2',
             'Body' => $this->request->getPost('body'),
-            'User'=> 'us2',
+            'User'=> '6',
             'Genre'=> 'gr3',
             'Visible'=> false
         ];

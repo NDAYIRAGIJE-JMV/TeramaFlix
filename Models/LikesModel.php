@@ -9,12 +9,12 @@ class LikesModel extends Model
     protected $DBGroup          = 'default';
     protected $table            = 'likes';
     protected $primaryKey       = 'ID';
-    protected $useAutoIncrement = false;
+    protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['ID','Posts','User','Type'];
+    protected $allowedFields    = ['Post','User','Type','Etat'];
     
     // Dates
     protected $useTimestamps = false;
@@ -39,4 +39,13 @@ class LikesModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+    
+    public function liked($user, $video){
+        $sql = 'select ID,Etat from likes where User= '.$user.' and Post  ='.$video;
+        $res = $this->db->query($sql);
+        $res = $res->getResult();
+        foreach($res as $res){
+            return $res;
+        }
+    }
 }

@@ -37,20 +37,25 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 
- $routes->get('/log','Home::index');
 $routes->post('read/search', 'readController::search');
 $routes->post('upload/add', 'UploadController::add');
+$routes->get('post/fetch', 'PostController::fetch');
+$routes->get('/Watch', 'readController::play');
+ $routes->get('/log','Home::index');
 $routes->post('read/play', 'readController::playVideo');
 $routes->post('post/comment', 'readController::comment');
 $routes->post('post/liked', 'readController::liked');
 $routes->post('read/list', 'readController::list');
+$routes->get('/Upload', 'PostController::post');
 $routes->post('/Upload/Video', 'UploadController::upvideo');
 $routes->post('post/add', 'PostController::add');
 $routes->post('post/update', 'PostController::update');
 $routes->post('post/search', 'PostController::search');
 $routes->post('post/searched', 'PostController::searched');
 $routes->post('login', 'Home::Login');
-$routes->post('signup', 'Home::Register');
+$routes->post('SignUp', 'Home::Register');
+$routes->get('/dashboard', 'AdminController::dashboard');
+
 $routes->get('registration', 'Home::Registration');
 $routes->get('logout','Home::Logout');
 //$routes->get('dashb', 'PostController::dashboard');

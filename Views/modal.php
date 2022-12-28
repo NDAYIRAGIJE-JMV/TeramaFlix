@@ -527,10 +527,7 @@ $('#spn1').css('color','red');
                                     response.message,
                                     'success'
                             )
-                           
-                            //console.log(response.sms.ID);
-                            console.log(response.sms);
-                            $(location).prop("href","<?= base_url('dashb')?>");
+                            $(location).prop("href", "http://localhost/TeramaFlix/");
                             $('#session').val(response.sms.ID);
                             $('.buttons').hide();
                             $("#login_btn").text('Login')
