@@ -15,7 +15,6 @@ class ViewsModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['Post','User','type'];
-    
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';

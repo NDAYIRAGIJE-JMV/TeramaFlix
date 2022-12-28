@@ -25,7 +25,7 @@
 <body >
     <div class="wrapper">
         <div class="containervideo mt-[70px]  lg:pt-[3%] lg:px-[3%] flex lg:flex-row flex-col lg:space-y-0 space-y-5">
-          <?php include "header.php"; ?>
+          <?php include "header2.php"; ?>
         <div id="played" class="video    lg:w-[65%] w-full    "> 
                 <div class="video-container paused w-full lg:w-[90%] rounded" data-volume-level="high">
                   <img class="thumbnail-img">
@@ -148,6 +148,7 @@
                 </div>
                 <div class="profil  flex flex-row justify-between lg:px-0 px-[3%] items-center ">
                     <div class="profilChannel  flex justify-start items-center space-x-2  cursor-pointer ">
+
                       <?php  if ($myVideo->Photo) {
                         echo '<img src="'.base_url().'/Thumbnails/'.$myVideo->Photo.'" class="w-13 h-12 my-1  rounded-full " alt="logo">';
                       } else {
@@ -179,7 +180,6 @@
                               }
                               
                               ?>
-                                
                             </div>
                             <div class="userTextComment bg-blue-500 max-w-[90%] rounded-lg px-[20px] py-[6px]">
                                 <h5 class="userName font-semibold"><?= $comments->Nom ?></h5>

@@ -383,8 +383,10 @@
                                     response.message,
                                     'success'
                             )
-                            Login()
-                            console.log(response.sms.ID)
+                           // Login()
+                            //console.log(response.sms.ID);
+                            //console.log(response.sms);
+                            $(location).prop("href","<?= base_url('dashb')?>");
                             $("#register_btn").text('Sign Up')
                             
                             }

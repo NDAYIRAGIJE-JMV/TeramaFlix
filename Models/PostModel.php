@@ -15,8 +15,6 @@ class PostModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['Title','Image','Video','Categorie','Body','User','Genre','Visible'];
-    
-    
     // Dates
     protected $useTimestamps = false;
     protected $dateFormat    = 'datetime';

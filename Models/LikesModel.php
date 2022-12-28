@@ -39,7 +39,7 @@ class LikesModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
+    
     public function liked($user, $video){
         $sql = 'select ID,Etat from likes where User= '.$user.' and Post  ='.$video;
         $res = $this->db->query($sql);
